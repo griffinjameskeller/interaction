@@ -6,6 +6,7 @@ var nameLabel;
 var favoriteColorLabel;
 var cityLabel;
 var submitButton;
+var backButton;
 
 
 
@@ -26,8 +27,6 @@ function setup() {
 
 }
 
-
-
 //write your custom functions here
 function makeProfile(){
 
@@ -46,10 +45,14 @@ function makeProfile(){
   var nameElement = createElement ('h2', submittedName);
   nameElement.position (100,100);
   nameElement.style("color", submittedColor);
-  nameElement.style ("font-size", Math.floor(random(200)));
+  nameElement.style ("font-size", Math.floor(random(200,400)));
 
   var cityElement = createElement ('h3', submittedCity);
   cityElement.position(200,200);
+
+backButton = createButton("back");
+backButton.mousePressed(goback);
+backButton.position (60,40);
 
 
 
@@ -59,6 +62,12 @@ function makeProfile(){
 function hover(){
 
 submitButton.style("background-color","lightgrey");
+
+}
+
+function goback(){
+
+location.reload();
 
 }
 
